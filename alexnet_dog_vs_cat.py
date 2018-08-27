@@ -312,7 +312,7 @@ class Alexnet_dog_vs_cat:
 if __name__ == '__main__':
 	train_data_path = "./dogs-vs-cats-dataset/train"
 	test_data_path = "./dogs-vs-cats-dataset/test"
-	log_path = "/root/damon_files/log" 
+	log_path = "./log" 
 	model_path = "./model"
 	obj = Alexnet_dog_vs_cat(train_data_path,test_data_path,log_path,model_path)
 	obj.run()

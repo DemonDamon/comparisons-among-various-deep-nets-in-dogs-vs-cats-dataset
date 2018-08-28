@@ -36,4 +36,4 @@ Comparisons among AlexNet, VGGNet19 in Dogs-VS-Cats dataset
  - 配好运行环境以及安装MongoDB，最好再安装一个MongoDB的可视化管理工具Studio 3T
  - 启动MongoDB，最后运行该py脚本即可，需要设置数据跨度（1分钟还是5分钟）、数据库名称、最大启动线程数量，以及通达信txt/csv数据文件夹路径
  - 最终运行后，在MongoDB上显示如下：
- ![image](https://github.com/DemonDamon/comparisons-among-various-deep-nets-in-dogs-vs-cats-dataset/alexvsvgg19.png)
+ ![image](https://github.com/DemonDamon/comparisons-among-various-deep-nets-in-dogs-vs-cats-dataset/blob/master/alexvsvgg19.png)

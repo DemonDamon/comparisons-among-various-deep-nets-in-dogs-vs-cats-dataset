@@ -516,9 +516,10 @@ class alexnet_and_vggnet19:
 			for _ in range(self.test_batches_per_epoch):
 				image_test, label_test = sess.run([self.image_test_batch, self.label_test_batch])
 				label_test = self.onehot(label_test)
-				acc = sess.run(self.accuracy, feed_dict={self.x:image_test, self.y:label_test, self.dropout_rate:1.0})
-				test_acc += acc
-				test_count += 1
+				if label_test.shape[1] == self.n_classes:
+					acc = sess.run(self.accuracy, feed_dict={self.x:image_test, self.y:label_test, self.dropout_rate:1.0})
+					test_acc += acc
+					test_count += 1
 			test_acc /= test_count
 
 			print(" [*] Validation: test dataset acc = " + str(np.around(test_acc, 4)))

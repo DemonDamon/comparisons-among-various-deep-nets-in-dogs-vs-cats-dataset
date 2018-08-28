@@ -10,8 +10,20 @@ class alexnet_and_vggnet19:
 
 	def __init__(self,train_file_path,test_file_path,log_path,model_save_path,net=None,pic_size=None,\
 		train_batch_size=None,test_batch_size=None,n_class=None,epoch_num=None):
-		self.train_fp = train_file_path  #"/root/damon_files/all/train"
-		self.test_fp = test_file_path #"/root/damon_files/all/test1"
+		'''参数说明：
+		   train_file_path: 训练集文件夹路劲
+		   test_file_path: 测试集文件夹路径
+		   log_path: tensorboard日志保存路径
+		   model_save_path: 训练后模型的保存路径
+		   net: 网络名称，如“alexnet”、“vggnet19”
+		   pic_size: 图片裁截后的大小
+		   train_batch_size: 训练时一个batch的大小
+		   test_batch_size: 测试时一个batch的大小
+		   n_class: 最终分类个数
+		   epoch_num: 循环多少代
+		'''
+		self.train_fp = train_file_path  
+		self.test_fp = test_file_path 
 		self.lp = log_path
 		self.learning_rate = 1e-4
 		self.batch_size = train_batch_size
@@ -21,7 +33,7 @@ class alexnet_and_vggnet19:
 		self.n_fc2 = 2048
 		self.print_step = 10
 		self.epoch = epoch_num
-		self.save_model_path = model_save_path #"/root/damon_files/model/AlexNet.ckpt"
+		self.save_model_path = model_save_path
 		self.train_batches_per_epoch = int(np.floor(25000 / self.batch_size))
 		self.test_batches_per_epoch = int(np.floor(1000 / self.batch_size))
 		self.net_name = net
@@ -76,10 +88,6 @@ class alexnet_and_vggnet19:
 		self.label_train_batch = tf.reshape(self.label_train_batch, [self.batch_size])
 
 	def get_test_file(self):
-		'''对数据集文件的位置进行读取，然后根据文件夹名称的不同，将处于不同
-			文件夹中的图片标签设置为0或者1，如果有更多分类的话可以依据这个格式
-			设置更多的标签类
-		'''
 		images = []
 		temp = []
 		for root, sub_folders, files, in os.walk(self.test_fp):
@@ -517,10 +525,10 @@ class alexnet_and_vggnet19:
 
 
 if __name__ == '__main__':
-	train_data_path = "/root/damon_files/all/train"
-	test_data_path = "/root/damon_files/all/test2"
-	log_path = "/root/damon_files/log" 
-	model_path = "/root/damon_files/model"
+	train_data_path = "./dogs-vs-cats-dataset/train"
+	test_data_path = "./dogs-vs-cats-dataset/test"
+	log_path = "./log" 
+	model_path = "./model"
 	# dog_vs_cat = alexnet_and_vggnet19(train_data_path,test_data_path,log_path,model_path,net='alexnet',pic_size=227,\
 	# 							train_batch_size=200, test_batch_size=200, n_class=2, epoch_num=300)
 	dog_vs_cat = alexnet_and_vggnet19(train_data_path,test_data_path,log_path,model_path,net='vggnet19',pic_size=224,\

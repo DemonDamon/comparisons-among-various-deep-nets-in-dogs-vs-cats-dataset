@@ -3,11 +3,14 @@ Comparisons among AlexNet, VGGNet19 in Dogs-VS-Cats dataset
 
 -------------------------------
 
-## * 简介
+## * Inros
 
-基本步骤如下：
+Procedures：
 
- - 先从通达信上下载1分钟和5分钟的期货数据，操作：系统-盘后数据下载
+ - Please download from https://www.kaggle.com/c/dogs-vs-cats/data. Notice that the pictures of cats and dogs are mixed in
+   train data folder, so need to move cats and dogs pics into seperated folders, and also the test data folder.
+![image](https://github.com/DemonDamon/comparisons-among-various-deep-nets-in-dogs-vs-cats-dataset/blob/master/list.png)
+
  - 然后从通达信导出txt或csv文件到指定目录，操作：系统-数据导出-高级导出（注意：这里导出的时候，有分隔格式的选择，优先选择逗号分隔，如果选择其他类型分隔，需要在py文件中第34行代码，split函数里换为相应的分隔字符）
  - 启动MongoDB，然后运行tdx_mongodb-operation.py脚本
  注意：这里默认你已经安装好MongoDB、Studio3T（数据可视化工具），并做好了相关配置

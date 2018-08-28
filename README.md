@@ -10,7 +10,7 @@ Comparisons among AlexNet, VGGNet19 in Dogs-VS-Cats dataset
    train data folder, so need to move cats and dogs pics into seperated folders, and also the test data folder.
 ![image](https://github.com/DemonDamon/comparisons-among-various-deep-nets-in-dogs-vs-cats-dataset/blob/master/list.png)
  - As to VGGNet19, you can train your own new model, or fine tune the pre-trained weights storing as .npy file, you can
-   find out the resources from the internet.
+   download from here https://pan.baidu.com/s/1fjQ85-jC46Fivj1V2SRHiA, and the code is 3dq4.
 
 DevEn`Python-v3(3.6)`：
 
